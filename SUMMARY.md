@@ -9,6 +9,7 @@
 
 ## Makefile
 
+* [.PHONY](ji-chu-yu-fa/.phony.md)
 * [常见错误](ji-chu-yu-fa/untitled/README.md)
   * [missing separator.  Stop.](ji-chu-yu-fa/untitled/missing-separator.-stop..md)
 
