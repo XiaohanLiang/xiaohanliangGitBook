@@ -1,4 +1,4 @@
-# My first github release page
+# Github release page
 
 ## Installation Guide
 

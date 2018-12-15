@@ -4,8 +4,10 @@
 
 ## 环境搭建
 
-* [My first github release page](huan-jing-da-jian/untitled.md)
 * [Goland Specs](huan-jing-da-jian/compilation-parameter.md)
+* [Terraform User Mannual](huan-jing-da-jian/terraform-user-mannual/README.md)
+  * [Github release page](huan-jing-da-jian/terraform-user-mannual/untitled.md)
+  * [Instance - Create Instance Using Image or Template](huan-jing-da-jian/terraform-user-mannual/instance-create-instance-using-image-or-template.md)
 
 ## Makefile
 
