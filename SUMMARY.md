@@ -10,7 +10,8 @@
   * [jdcloud\_instance](huan-jing-da-jian/terraform-user-mannual/instance-create-instance-using-image-or-template.md)
   * [jdcloud\_disk](huan-jing-da-jian/terraform-user-mannual/jdcloud_disk.md)
   * [jdcloud\_eip](huan-jing-da-jian/terraform-user-mannual/untitled-1.md)
-* [Untitled](huan-jing-da-jian/untitled.md)
+  * [jdcloud\_network\_interface](huan-jing-da-jian/terraform-user-mannual/untitled-2.md)
+  * [jdcloud\_network\_security\_group](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group.md)
 
 ## Makefile
 

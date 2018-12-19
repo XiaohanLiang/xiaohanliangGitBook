@@ -96,6 +96,7 @@ The following arguments are supported:
   * cn-east-2 : bgp
 * `security_group_id` - \(Optional\) A list of security group ids to associate with
 * `network_interface_name` - \(Optional\) The id of a network interface, each ECS comes with a elastic network interface. You can leave it as a default name or specify a name you would like to see.
+* `sanity_check` - \(Optional\) : Idempotent check for this network interface, if you have no idea what this parameter is about, just leave it blank.
 * `secondary_ips` - \(Optional\) A list of private ips. These private ips will be associated with the primary network interface on this instance
 * `secondary_ip_count` - \(Optional\) Besides specifying some private ips. By specifying this , a number of private ips will be generated and associated with the network interface.
 

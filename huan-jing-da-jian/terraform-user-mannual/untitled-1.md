@@ -11,7 +11,7 @@ resource "jdcloud_eip" "example"{
 }
 ```
 
-### Arguments Reference
+### Argument Reference
 
 The following arguments are supported:
 
