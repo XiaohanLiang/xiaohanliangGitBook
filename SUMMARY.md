@@ -20,7 +20,12 @@
   * [jdcloud\_oss\_bucket\_upload](huan-jing-da-jian/terraform-user-mannual/jdcloud_oss_bucket_upload.md)
   * [jdcloud\_route\_table](huan-jing-da-jian/terraform-user-mannual/jdcloud_route_table.md)
   * [jdcloud\_route\_table\_rules](huan-jing-da-jian/terraform-user-mannual/jdcloud_route_table_rules.md)
-* [resource\_jdcloud\_rds\_instance](huan-jing-da-jian/resource_jdcloud_rds_instance.md)
+  * [jdcloud\_rds\_instance](huan-jing-da-jian/terraform-user-mannual/resource_jdcloud_rds_instance.md)
+  * [jdcloud\_rds\_database](huan-jing-da-jian/terraform-user-mannual/jdcloud_rds_database.md)
+  * [jdcloud\_rds\_account](huan-jing-da-jian/terraform-user-mannual/jdcloud_rds_account.md)
+  * [jdcloud\_rds\_privilege](huan-jing-da-jian/terraform-user-mannual/jdcloud_rds_privilege.md)
+  * [jdcloud\_subnet](huan-jing-da-jian/terraform-user-mannual/jdcloud_subnet.md)
+  * [jdcloud\_vpc](huan-jing-da-jian/terraform-user-mannual/jdcloud_vpc.md)
 
 ## Makefile
 

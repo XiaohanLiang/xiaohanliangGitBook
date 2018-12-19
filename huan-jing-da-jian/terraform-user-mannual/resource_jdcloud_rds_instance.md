@@ -1,4 +1,4 @@
-# resource\_jdcloud\_rds\_instance
+# jdcloud\_rds\_instance
 
 Provides a JDCloud RDS instance. 
 
@@ -19,6 +19,8 @@ resource "jdcloud_rds_instance" "rds_example"{
 ```
 
 ### Argument Reference
+
+The following arguments are supported:
 
 * `instance_name`- \(Required\) : Name this RDS instance. Restriction on instance\_name lists following
   * Chinese characters and alphanumeric characters
@@ -47,6 +49,8 @@ resource "jdcloud_rds_instance" "rds_example"{
 * `charge_duration`- \(Optional\) : Used only when charge\_mode is prepaid\_by\_duration, specifies how long you would like to buy. When charge\_duration is "month", charge\_unit varies from 1 to 9, when duration is "year", charge\_unit varies from 1 to 3.
 
 ### Attribute Reference 
+
+The following attributes are exported:
 
 * `rds_id`: The id of this RDS instance, can be used to reference this instance.
 
