@@ -17,6 +17,9 @@
   * [jdcloud\_network\_security\_group](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group.md)
   * [jdcloud\_network\_security\_group\_rules](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group_rules.md)
   * [jdcloud\_oss\_bucket](huan-jing-da-jian/terraform-user-mannual/jdcloud_oss_bucket.md)
+  * [jdcloud\_oss\_bucket\_upload](huan-jing-da-jian/terraform-user-mannual/jdcloud_oss_bucket_upload.md)
+  * [jdcloud\_route\_table](huan-jing-da-jian/terraform-user-mannual/jdcloud_route_table.md)
+  * [jdcloud\_route\_table\_rules](huan-jing-da-jian/terraform-user-mannual/jdcloud_route_table_rules.md)
 
 ## Makefile
 
