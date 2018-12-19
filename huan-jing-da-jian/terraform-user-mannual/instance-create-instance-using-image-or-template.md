@@ -24,8 +24,8 @@ resource "jdcloud_instance" "vm-1" {
 
   system_disk = {
     disk_category = "local"
-    auto_delete = true
     device_name = "vda"
+    disk_size_gb =  40
   }
 
   data_disk = {
@@ -36,15 +36,15 @@ resource "jdcloud_instance" "vm-1" {
 
   data_disk = {
     disk_category = "cloud"
-    auto_delete = true
     device_name = "vdc"
-    no_device = true
-
+    disk_type = "ssd"
+    disk_name = "exampleDisk"
+    disk_size_gb = 50
     az = "cn-north-1a"
+
+    auto_delete = true
     disk_name = "vm1-datadisk-1"
     description = "test"
-    disk_type = "premium-hdd"
-    disk_size_gb = 50
   }
 }
 
@@ -66,16 +66,20 @@ The following arguments are supported:
 
   * `disk_category` - \(Required\): can be local or cloud. Especially when the region of this instance is cn-north-1. Only local disk is available. For other regions, both local and cloud are fine.
   * `disk_size_gb` - \(Required\) : The volume of your disk size, for a local system disk locates at cn-north-1, the volume will be fixed to 40Gb
-  * `az` - \(Required\) : The location of this system disk. Must  be the same location as this instance
+  * `device_name` - \(Required\) : The device name that this disk will be attached at. For example, this can be "vda", "vdb" etc.
 
 * `data_disk` - \(Optional\) : Similar to system disk. You can also create number of data disks together with your ECS instance. 
+
   * `disk_category` - \(Required\): A string , can be "local" or "cloud".
   * `device_name` - \(Required\) : The device name that this disk will be attached at. For example, this can be "vda", "vdb" etc.
   * `disk_type` - \(Required\) : Type of this disk,  "ssd" or "prenium-hdd".
   * `disk_size_gb` - \(Required\) : The volume of your disk size, for "ssd", volume varies from 20Gb to 1000 Gb. For "prenium-hdd" disk, volume varies from 20Gb to 3000Gb 
-  * `az` - \(Required\) : The location of this system disk. Must  be the same location as this instance
+  * `disk_name` - \(Required\): A string used to name this disk
+  * `az` - \(Required\): The place this disk will be locate at
   * `auto_delete` - \(Optional\) : Bool value. If this value is set to "true", disk will be deleted when it is detached from instance.
   * `snapshot_id` - \(Optional\) :Fill in if you would like to create this disk from a snapshot.
+  * `description` - \(Optional\) : Description of this disk
+
 * `description` - \(Optional\) Description of this ECS instance 
 * `password` - \(Optional\) If password of this instance is not set. A default password will be sent to you by email and SMS
 * `key_names` - \(Optional\) Name of the key pair used to login to instance. Look like `${jdcloud_key_pairs.key-1.key_name}`
