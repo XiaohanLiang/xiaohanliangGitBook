@@ -2,6 +2,10 @@
 
 Provides a JDCloud ECS instance 
 
+{% hint style="warning" %}
+Currently instance paid by "prepaid\_by\_duration" cannot be deleted before they are expired
+{% endhint %}
+
 ### Example Usage 
 
 ```bash
