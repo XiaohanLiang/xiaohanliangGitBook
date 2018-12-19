@@ -70,12 +70,12 @@ The following arguments are supported:
 
   * `disk_category` - \(Required\): can be local or cloud. Especially when the region of this instance is cn-north-1. Only local disk is available. For other regions, both local and cloud are fine.
   * `disk_size_gb` - \(Required\) : The volume of your disk size, for a local system disk locates at cn-north-1, the volume will be fixed to 40Gb
-  * `device_name` - \(Required\) : The device name that this disk will be attached at. For example, this can be "vda", "vdb" etc.
+  * `device_name` - \(Required\) : Specify the logical attachment point , for example, attachment point can be "vba" "vbc" etc. Just to make sure this point is available with no other device using it.
 
 * `data_disk` - \(Optional\) : Similar to system disk. You can also create number of data disks together with your ECS instance. 
 
   * `disk_category` - \(Required\): A string , can be "local" or "cloud".
-  * `device_name` - \(Required\) : The device name that this disk will be attached at. For example, this can be "vda", "vdb" etc.
+  * `device_name` - \(Required\) : Specify the logical attachment point , for example, attachment point can be "vba" "vbc" etc. Just to make sure this point is available with no other device using it.
   * `disk_type` - \(Required\) : Type of this disk,  "ssd" or "prenium-hdd".
   * `disk_size_gb` - \(Required\) : The volume of your disk size, for "ssd", volume varies from 20Gb to 1000 Gb. For "prenium-hdd" disk, volume varies from 20Gb to 3000Gb 
   * `disk_name` - \(Required\): A string used to name this disk

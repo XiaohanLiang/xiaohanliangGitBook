@@ -9,10 +9,14 @@
   * [Github release page](huan-jing-da-jian/terraform-user-mannual/untitled.md)
   * [jdcloud\_instance](huan-jing-da-jian/terraform-user-mannual/instance-create-instance-using-image-or-template.md)
   * [jdcloud\_disk](huan-jing-da-jian/terraform-user-mannual/jdcloud_disk.md)
+  * [jdcloud\_disk\_attachment](huan-jing-da-jian/terraform-user-mannual/jdcloud_disk_attachment.md)
   * [jdcloud\_eip](huan-jing-da-jian/terraform-user-mannual/untitled-1.md)
+  * [jdcloud\_eip\_association](huan-jing-da-jian/terraform-user-mannual/jdcloud_eip_association.md)
   * [jdcloud\_network\_interface](huan-jing-da-jian/terraform-user-mannual/untitled-2.md)
+  * [jdcloud\_network\_interface\_attachment](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_interface_attachment.md)
   * [jdcloud\_network\_security\_group](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group.md)
   * [jdcloud\_network\_security\_group\_rules](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group_rules.md)
+  * [jdcloud\_oss\_bucket](huan-jing-da-jian/terraform-user-mannual/jdcloud_oss_bucket.md)
 
 ## Makefile
 
