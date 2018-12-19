@@ -20,6 +20,7 @@
   * [jdcloud\_oss\_bucket\_upload](huan-jing-da-jian/terraform-user-mannual/jdcloud_oss_bucket_upload.md)
   * [jdcloud\_route\_table](huan-jing-da-jian/terraform-user-mannual/jdcloud_route_table.md)
   * [jdcloud\_route\_table\_rules](huan-jing-da-jian/terraform-user-mannual/jdcloud_route_table_rules.md)
+* [resource\_jdcloud\_rds\_instance](huan-jing-da-jian/resource_jdcloud_rds_instance.md)
 
 ## Makefile
 
