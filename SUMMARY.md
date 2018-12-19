@@ -12,6 +12,7 @@
   * [jdcloud\_eip](huan-jing-da-jian/terraform-user-mannual/untitled-1.md)
   * [jdcloud\_network\_interface](huan-jing-da-jian/terraform-user-mannual/untitled-2.md)
   * [jdcloud\_network\_security\_group](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group.md)
+  * [jdcloud\_network\_security\_group\_rules](huan-jing-da-jian/terraform-user-mannual/jdcloud_network_security_group_rules.md)
 
 ## Makefile
 
