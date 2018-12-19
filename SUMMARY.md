@@ -9,6 +9,7 @@
   * [Github release page](huan-jing-da-jian/terraform-user-mannual/untitled.md)
   * [jdcloud\_instance](huan-jing-da-jian/terraform-user-mannual/instance-create-instance-using-image-or-template.md)
   * [jdcloud\_disk](huan-jing-da-jian/terraform-user-mannual/jdcloud_disk.md)
+  * [jdcloud\_eip](huan-jing-da-jian/terraform-user-mannual/untitled-1.md)
 * [Untitled](huan-jing-da-jian/untitled.md)
 
 ## Makefile

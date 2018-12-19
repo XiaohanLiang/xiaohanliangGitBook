@@ -88,8 +88,8 @@ The following arguments are supported:
 * `password` - \(Optional\) If password of this instance is not set. A default password will be sent to you by email and SMS
 * `key_names` - \(Optional\) Name of the key pair used to login to instance. Look like `${jdcloud_key_pairs.key-1.key_name}`
 * `primary_ip` - \(Optional\) You can specify an public IP address for this instance. If not specified, default public ip address will be generated and assigned.
-* elastic\_ip\_bandwidth - \(Optional\) Specify the bandwidth of your public ip.
-* elastic\_ip\_provider - \(Optional\) Name of your ip service provider, can be bgp or no\_bgp, according to the region this instance locates at:
+* `elastic_ip_bandwidth` - \(Optional\) Specify the bandwidth of your public ip.
+* `elastic_ip_provider` - \(Optional\) Name of your ip service provider, can be bgp or no\_bgp, according to the region this instance locates at:
   * cn-north-1 : bgp
   * cn-south-1 : bgp or no\_bgp
   * cn-east-1 : bgp or no\_bgp
