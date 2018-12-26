@@ -51,5 +51,5 @@
 
 ## 烧咸鱼
 
-* [在Ubuntu上安装中文输入法](shao-xian-yu/zai-ubuntu-shang-an-zhuang-zhong-wen-shu-ru-fa.md)
+* [在Ubuntu上安装中文输入法](salt/zai-ubuntu-shang-an-zhuang-zhong-wen-shu-ru-fa.md)
 
