@@ -29,7 +29,9 @@
   * [jdcloud\_subnet](terraform/terraform-user-mannual/jdcloud_subnet.md)
   * [jdcloud\_vpc](terraform/terraform-user-mannual/jdcloud_vpc.md)
 
-## Makefile
+## K8S
+
+* [安装Kubernetes集群](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun.md)
 
 ## GO-SPECS
 
@@ -46,4 +48,8 @@
   * [\[default\] 合理设置默认情况](go_specs/go-select-x-channel/default-he-li-she-zhi-mo-ren-qing-kuang.md)
 * [Go工作池](go_specs/go-gong-zuo-chi.md)
 * [读取速率限制](go_specs/du-qu-su-lv-xian-zhi.md)
+
+## 烧咸鱼
+
+* [在Ubuntu上安装中文输入法](shao-xian-yu/zai-ubuntu-shang-an-zhuang-zhong-wen-shu-ru-fa.md)
 
