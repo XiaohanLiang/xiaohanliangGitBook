@@ -31,8 +31,8 @@
 
 ## K8S
 
-* [安装Kubernetes集群](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun.md)
-* [StepByStep](ji-chu-yu-fa/untitled.md)
+* [安装Kubernetes集群](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/README.md)
+  * [StepByStep](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/untitled.md)
 
 ## GO-SPECS
 
