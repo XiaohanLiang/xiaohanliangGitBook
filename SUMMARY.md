@@ -31,8 +31,11 @@
 
 ## K8S
 
+* [K8s常用指令](ji-chu-yu-fa/k8s-chang-yong-zhi-ling.md)
 * [安装Kubernetes集群](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/README.md)
   * [StepByStep](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/untitled.md)
+  * [更多参数参考](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/geng-duo-can-shu-can-kao.md)
+  * [你可能会遇到的问题](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/ni-ke-neng-hui-yu-dao-de-wen-ti.md)
 
 ## GO-SPECS
 

@@ -119,7 +119,7 @@ done
 下面就会是最重要的一步，集群能不能起来最重要的就是这一步
 
 ```bash
-$ kubeadm init --kubernetes-version=<your_version>
+$ kubeadm init --kubernetes-version=<your_version> 
 ```
 
 一定要带上这个version来指定你要初始化什么版本，这相当于告诉kubeadm你已经都有现成的东西了，直接来用就好了，否则它会要先去Google哪儿先检查并拉取最新版本的kubenetes.
@@ -214,7 +214,7 @@ $ kubeadm join 192.168.0.66:6443 --token r4fu1b.d5sb52nxxseqqs89 --discovery-tok
 
 ### 
 
-### 确认节点已经加入集群了
+### 确认Pod已经加入集群了
 
 通过以下命令来查看各个pod的任务都有哪些，以及他们现在的状态是怎样的，你的node如果需要与master沟通，就需要一个pod来处理沟通相关的任务
 
@@ -236,11 +236,29 @@ kube-scheduler-dev1            1/1     Running             0          45m   192.
 
 在上面的图中可以发现有一个叫做proxy的pod，是储存在我们的工作节点里面的，它READY的状态是1/1说明已经完全准备好了，状态也是Running, 这个节点目前没有任何问题，但是
 
-#### 节点问题诊断
+#### Pod问题诊断
 
 这个节点状态很可能就不是这样的，正常情况下应该很快这个节点就已经添加上来了，但是如果这个节点状态是err或者pending一类，而且很久了，那就证明这个节点有问题，关于这种情况，我们查询这个节点的最近的详细活动信息，就能看到到底是因为什么而出了错
 
 ```bash
 kubectl describe pod -n kube-system <pod_name>
+```
+
+
+
+### 查看你节点的状态
+
+你的pod没有问题，说明这个小东西已经准备好要开始工作了，但是你的节点呢，节点在加入集群以后需要去跟Master相互沟通，你需要一个节点之间的网络来做到与外界沟通。 
+
+通过以下内容我们可以发现，虽然之前的pod是已经准备好开始工作了，但是因为网络环境本身并没有准备好，因此节点本身并不能开始工作，他们的状态全部显示为`NotReady`
+
+Q:（pod沟通与节点沟通是一回事吗？节点之间如果需要另外的网络那么之前是怎么加入的？为什么是通过内网IP的性质来沟通的？ 如果不在同一个VPC里面是还能不能相互沟通了）
+
+```bash
+$ kubectl get nodes
+
+NAME   STATUS     ROLES    AGE     VERSION
+dev1   NotReady   master   2m34s   v1.13.1
+dev2   NotReady   <none>   2m13s   v1.13.1
 ```
 
