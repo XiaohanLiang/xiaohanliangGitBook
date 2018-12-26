@@ -199,6 +199,9 @@ as root:
 $ mkdir -p $HOME/.kube
 $ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+# 如果你不保存，每次想对Cluster有什么操作就会提示
+The connection to the server localhost:8080 was refused - did you specify the right host or port?
 ```
 
 #### 2. 告诉你如何让别的节点加入你这个Master
@@ -209,5 +212,35 @@ $ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 $ kubeadm join 192.168.0.66:6443 --token r4fu1b.d5sb52nxxseqqs89 --discovery-token-ca-cert-hash sha256:88ed8f4807173291b1d34195014841d9f0ad07cff8734b46bd403a0011a2b90b
 ```
 
+### 
 
+### 确认节点已经加入集群了
+
+通过以下命令来查看各个pod的任务都有哪些，以及他们现在的状态是怎样的，你的node如果需要与master沟通，就需要一个pod来处理沟通相关的任务
+
+```bash
+$ kubectl get pod -n kube-system -o wide
+
+NAME                           READY   STATUS              RESTARTS   AGE   IP             NODE   NOMINATED NODE   READINESS GATES
+coredns-86c58d9df4-pxk97       0/1     ContainerCreating   0          46m   <none>         dev2   <none>           <none>
+coredns-86c58d9df4-tjrj6       0/1     ContainerCreating   0          46m   <none>         dev2   <none>           <none>
+etcd-dev1                      1/1     Running             0          45m   192.168.0.66   dev1   <none>           <none>
+kube-apiserver-dev1            1/1     Running             0          45m   192.168.0.66   dev1   <none>           <none>
+kube-controller-manager-dev1   1/1     Running             0          45m   192.168.0.66   dev1   <none>           <none>
+kube-proxy-7lk9f               1/1     Running             0          46m   192.168.0.66   dev1   <none>           <none>
+<--------------->
+kube-proxy-pt6l2               1/1     Running             0          13m   192.168.0.68   dev2   <none>           <none>
+<--------------->
+kube-scheduler-dev1            1/1     Running             0          45m   192.168.0.66   dev1   <none>           <none>
+```
+
+在上面的图中可以发现有一个叫做proxy的pod，是储存在我们的工作节点里面的，它READY的状态是1/1说明已经完全准备好了，状态也是Running, 这个节点目前没有任何问题，但是
+
+#### 节点问题诊断
+
+这个节点状态很可能就不是这样的，正常情况下应该很快这个节点就已经添加上来了，但是如果这个节点状态是err或者pending一类，而且很久了，那就证明这个节点有问题，关于这种情况，我们查询这个节点的最近的详细活动信息，就能看到到底是因为什么而出了错
+
+```bash
+kubectl describe pod -n kube-system <pod_name>
+```
 
