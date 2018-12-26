@@ -89,10 +89,12 @@ k8s.gcr.io/etcd:3.2.24
 k8s.gcr.io/coredns:1.2.6
 ```
 
-所以可以看的出来，我们的kubernetes版本是v1.13.1还有一些其他所需要的内容，所以准备一个shell脚本，在images中，将其中的版本号换成你现在正在用的版本号，确保你拉的就是正确的
+所以可以看的出来，我们的kubernetes版本是v1.13.1还有一些其他所需要的内容，所以准备一个shell脚本，在images中，将其中的版本号换成你现在正在用的版本号，确保你拉的就是你所需要的版本
+
+保存后，执行 `bash images_list.sh` 去从阿里云那里拉取镜像，for循环可以分成两个部分，第一部分是执行去阿里云那里拉取镜像，但是拉回来的都是阿里的名字，于是第二部分我们把它改成k8s.gcr的名字，确保kubeadm能根据镜像名称找到这个镜像
 
 {% code-tabs %}
-{% code-tabs-item title="image\_list.sh" %}
+{% code-tabs-item title="images\_list.sh" %}
 ```bash
 images=(
     kube-apiserver:v1.13.1
@@ -111,4 +113,101 @@ done
 ```
 {% endcode-tabs-item %}
 {% endcode-tabs %}
+
+### 初始化k8s的master节点
+
+下面就会是最重要的一步，集群能不能起来最重要的就是这一步
+
+```bash
+$ kubeadm init --kubernetes-version=<your_version>
+```
+
+一定要带上这个version来指定你要初始化什么版本，这相当于告诉kubeadm你已经都有现成的东西了，直接来用就好了，否则它会要先去Google哪儿先检查并拉取最新版本的kubenetes.
+
+#### kubeadm init常见卡住的情况怎么处理
+
+```bash
+$ kubeadm init --kubernetes-version=v1.13.1
+[init] Using Kubernetes version: v1.13.1
+[preflight] Running pre-flight checks
+	[WARNING Hostname]: hostname "dev1" could not be reached
+	[WARNING Hostname]: hostname "dev1": lookup dev1 on 103.224.222.222:53: no such host
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[preflight] You can also perform this action in beforehand using 'kubeadm config images pull'
+<----------------------然后就卡在这里了------------------------>
+^C
+```
+
+那就说明它去Google哪儿拉镜像去了, 过了很长时间以后它会返回报错信息，信息不用看都知道内容如下：“ 我需要k8s.gcr.XXXX 但是我没办法拉取”   。也正是你的镜像没有准备好，它才会去Google哪儿拉镜像回来，根据它报错的信息我们来处理，举个例子, 你的报错信息可能会长这样
+
+```bash
+[ERROR ImagePull]: 
+
+failed to pull image k8s.gcr.io/kube-apiserver:v1.13.0: 
+output: Error response from daemon: Get https://k8s.gcr.io/v2/: 
+
+net/http: request canceled while waiting for connection 
+(Client.Timeout exceeded while awaiting headers)
+error: exit status 1
+```
+
+看见了那个大大的Client.Timeout了吗？看了那个大大的k8s.gcr了吗？ 在这个例子中他说它需要一个叫的镜像，但是你没有，所以他去了Google哪儿。 所以怎么办呢，解决方法有没有写对
+
+* 检查一下你的 images\_list.sh，看看版本号有没有写对，有没有把阿里的名字改过来
+* 如果`images_list.sh`没问题，试一下 docker images 来看看你的镜像库里到底有没有需要的镜像
+
+#### 正确的init结果
+
+```bash
+[init] Using Kubernetes version: v1.13.1
+[preflight] Running pre-flight checks
+	[WARNING Hostname]: hostname "dev1" could not be reached
+	[WARNING Hostname]: hostname "dev1": lookup dev1 on 103.224.222.222:53: no such host
+[preflight] Pulling images required for setting up a Kubernetes cluster
+[preflight] This might take a minute or two, depending on the speed of your internet connection
+[kubelet-start] Activating the kubelet service
+     <...一大堆类似的信息...>
+[addons] Applied essential addon: CoreDNS
+[addons] Applied essential addon: kube-proxy
+
+Your Kubernetes master has initialized successfully!
+
+To start using your cluster, you need to run the following as a regular user:
+
+  mkdir -p $HOME/.kube
+  sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+  sudo chown $(id -u):$(id -g) $HOME/.kube/config
+
+You should now deploy a pod network to the cluster.
+Run "kubectl apply -f [podnetwork].yaml" with one of the options listed at:
+  https://kubernetes.io/docs/concepts/cluster-administration/addons/
+
+You can now join any number of machines by running the following on each node
+as root:
+
+  kubeadm join 192.168.0.66:6443 --token r4fu1b.d5sb52nxxseqqs89 --discovery-token-ca-cert-hash sha256:88ed8f4807173291b1d34195014841d9f0ad07cff8734b46bd403a0011a2b90b
+```
+
+如果结果是以上的这样的，那么你的init基本上是成功了，在以上的报告中它告诉了你了两个重要的信息
+
+#### 1. 你需要保存一下你的配置以及你的授权信息
+
+你作为管理员可以去干涉K8s集群内部的事务，是因为你在初始化这个master的时候创建了一把密钥，你把这个密钥放到.kube下来证明你作为管理员的身份，执行  
+
+```bash
+$ mkdir -p $HOME/.kube
+$ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+$ sudo chown $(id -u):$(id -g) $HOME/.kube/config
+```
+
+#### 2. 告诉你如何让别的节点加入你这个Master
+
+确保别的节点也有那一大堆镜像，如果加入过程中卡住了，那么就是这个节点缺少镜像
+
+```bash
+$ kubeadm join 192.168.0.66:6443 --token r4fu1b.d5sb52nxxseqqs89 --discovery-token-ca-cert-hash sha256:88ed8f4807173291b1d34195014841d9f0ad07cff8734b46bd403a0011a2b90b
+```
+
+
 
