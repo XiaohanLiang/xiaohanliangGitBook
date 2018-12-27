@@ -1,4 +1,4 @@
-# StepByStep
+# StepByStep - 节点布置上
 
 > OS: Ubuntu 16.04 LTS   
 > 网络: 国内普通网络
