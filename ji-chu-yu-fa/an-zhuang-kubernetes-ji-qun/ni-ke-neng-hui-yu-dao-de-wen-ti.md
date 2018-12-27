@@ -8,9 +8,8 @@
 
 ### X509错误 - Certificate
 
-如果你的虚拟机包含有多张网卡，你需要加上 --apiserver-cert-extra-sans参数来涵盖多张网卡所对应的不同的私有的地址，这个错误出现的原因是K8s之间相互交流依托于非常多的CA证书来完成。这些证书的生成于你的私有IP之上，用来证明你的身份。
-
-但是你拥有很多私有IP你又不说，可能`kubectl`发起于一个地址但是`Node join` 却去了另外一个地址
+1. 网上别人这么说：如果你的虚拟机包含有多张网卡，你需要加上 --apiserver-cert-extra-sans参数来涵盖多张网卡所对应的不同的私有的地址，这个错误出现的原因是K8s之间相互交流依托于非常多的CA证书来完成。这些证书的生成于你的私有IP之上，用来证明你的身份。  但是你拥有很多私有IP你又不说，可能`kubectl`发起于一个地址但是`Node join` 却去了另外一个地址
+2. **我自己并重新init了一次，但是却没有执行cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 这时候你用的是上一次的证书，这时候你虽然IP是对的上的，但是次数匹配不上，因此产生了X509权限错误**： 如果我kubeadm reset并重新init了一次，但是却没有执行cp -i /etc/kubernetes/admin.conf $HOME/.kube/config 这时候你用的是上一次的证书，这时候你虽然IP是对的上的，但是次数匹配不上，因此产生了X509权限错误
 
 
 
