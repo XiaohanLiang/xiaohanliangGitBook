@@ -37,8 +37,8 @@
   * [更多参数参考](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/geng-duo-can-shu-can-kao.md)
   * [你可能会遇到的问题](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/ni-ke-neng-hui-yu-dao-de-wen-ti.md)
   * [StepByStep - 网络安装上](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/stepbystep-wang-luo-an-zhuang-shang.md)
-* [知识与定义](ji-chu-yu-fa/zhi-shi-yu-ding-yi.md)
-* [Untitled](ji-chu-yu-fa/untitled.md)
+* [知识与定义](ji-chu-yu-fa/zhi-shi-yu-ding-yi/README.md)
+  * [从Master组件开始](ji-chu-yu-fa/zhi-shi-yu-ding-yi/untitled.md)
 
 ## GO-SPECS
 
