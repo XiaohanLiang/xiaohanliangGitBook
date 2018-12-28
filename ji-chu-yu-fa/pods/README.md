@@ -28,7 +28,7 @@ Pod里所有的容器都共享一片内存，与此同时，就算Pod不在了�
 
 如下图所示，假设现在我想搞一个App做网页服务，那么，两个容器，一个负责往内存里加网页内容，另一个从内存里抽内容对外提供网页服务，两者协同对外统一成一个网页服务。
 
-![Producer&amp;Consumer-&#x6574;&#x4F53;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x670D;&#x52A1;App](../../.gitbook/assets/pod.svg)
+![Producer&amp;Consumer-&#x6574;&#x4F53;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x670D;&#x52A1;App](../../.gitbook/assets/pc-mo-xing.PNG)
 
 ## 实际生产中我们是怎么做的
 

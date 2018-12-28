@@ -42,8 +42,10 @@
   * [从Master组件开始](ji-chu-yu-fa/zhi-shi-yu-ding-yi/untitled/README.md)
     * [API-Server](ji-chu-yu-fa/zhi-shi-yu-ding-yi/untitled/api-server.md)
 * [Pods](ji-chu-yu-fa/pods/README.md)
-  * [详细介绍Pods](ji-chu-yu-fa/pods/xiang-xi-jie-shao-pods/README.md)
-    * [什么是上下文？](ji-chu-yu-fa/pods/xiang-xi-jie-shao-pods/cun-chu-wang-luo-wo-dong-shen-me-shi-shang-xia-wen.md)
+  * [Pod中的容器](ji-chu-yu-fa/pods/pod-zhong-de-rong-qi/README.md)
+    * [什么是上下文？](ji-chu-yu-fa/pods/pod-zhong-de-rong-qi/cun-chu-wang-luo-wo-dong-shen-me-shi-shang-xia-wen.md)
+  * [Pod的生命周期](ji-chu-yu-fa/pods/pod-de-sheng-ming-zhou-qi.md)
+  * [一些问题](ji-chu-yu-fa/pods/yi-xie-wen-ti.md)
 
 ## GO-SPECS
 
