@@ -21,8 +21,10 @@ $ kubeadm config images list
 > k8s.gcr.io/coredns:1.2.6
 ```
 
+
+
 ### 由此我们做出总结...
 
 * 关于Kubernetes 集群的管理工具包含有： Kubectl / Kubeadm .... 这些都是我们通过apt-get下载的
-* Kubernetes集群中, Master节点的组件有：ApiServer / scheduler ... 这些都是我们pull下来的镜像
+* Kubernetes集群中, Master节点的组件有：ApiServer / Scheduler ... 这些都是我们pull下来的镜像
 

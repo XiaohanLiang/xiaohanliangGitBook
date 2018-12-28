@@ -38,7 +38,12 @@
   * [你可能会遇到的问题](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/ni-ke-neng-hui-yu-dao-de-wen-ti.md)
   * [StepByStep - 网络安装上](ji-chu-yu-fa/an-zhuang-kubernetes-ji-qun/stepbystep-wang-luo-an-zhuang-shang.md)
 * [知识与定义](ji-chu-yu-fa/zhi-shi-yu-ding-yi/README.md)
-  * [从Master组件开始](ji-chu-yu-fa/zhi-shi-yu-ding-yi/untitled.md)
+  * [K8s管理组件介绍](ji-chu-yu-fa/zhi-shi-yu-ding-yi/k8s-guan-li-zu-jian-jie-shao.md)
+  * [从Master组件开始](ji-chu-yu-fa/zhi-shi-yu-ding-yi/untitled/README.md)
+    * [API-Server](ji-chu-yu-fa/zhi-shi-yu-ding-yi/untitled/api-server.md)
+* [Pods](ji-chu-yu-fa/pods/README.md)
+  * [详细介绍Pods](ji-chu-yu-fa/pods/xiang-xi-jie-shao-pods/README.md)
+    * [什么是上下文？](ji-chu-yu-fa/pods/xiang-xi-jie-shao-pods/cun-chu-wang-luo-wo-dong-shen-me-shi-shang-xia-wen.md)
 
 ## GO-SPECS
 
