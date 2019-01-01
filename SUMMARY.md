@@ -46,6 +46,7 @@
     * [什么是上下文？](ji-chu-yu-fa/pods/pod-zhong-de-rong-qi/cun-chu-wang-luo-wo-dong-shen-me-shi-shang-xia-wen.md)
   * [Pod的生命周期](ji-chu-yu-fa/pods/pod-de-sheng-ming-zhou-qi.md)
   * [一些问题](ji-chu-yu-fa/pods/yi-xie-wen-ti.md)
+* [Init Containers - 初始化容器](ji-chu-yu-fa/init-containers-chu-shi-hua-rong-qi.md)
 
 ## GO-SPECS
 
